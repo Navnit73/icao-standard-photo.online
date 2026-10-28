@@ -43,6 +43,9 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
   formatDetection: { telephone: false, email: false, address: false },
+  verification: {
+    other: { "msvalidate.01": "6BFE4F80CD650E2E0CA99EA3C6C7664F" },
+  },
 };
 
 export const viewport: Viewport = {
