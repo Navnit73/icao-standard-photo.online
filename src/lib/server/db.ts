@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { MongoClient, type Collection } from "mongodb";
+import { MongoClient, type Collection, type Db, type Document, type IndexDescription } from "mongodb";
 
 export type PhotoMetrics = {
   head_height_pct: number;
@@ -29,7 +29,10 @@ export type PhotoRecord = {
 };
 
 // Reuse one client across hot reloads in development
-const globalForMongo = globalThis as unknown as { mongoClient?: Promise<MongoClient> };
+const globalForMongo = globalThis as unknown as {
+  mongoClient?: Promise<MongoClient>;
+  indexesEnsured?: Map<string, Promise<void>>;
+};
 
 function client() {
   const uri = process.env.MONGODB_URI;
@@ -38,9 +41,33 @@ function client() {
   return globalForMongo.mongoClient;
 }
 
+export async function getDb(): Promise<Db> {
+  return (await client()).db(process.env.MONGODB_DB);
+}
+
+/**
+ * Create a collection's indexes once per process, in a single round trip. Kept on globalThis
+ * so dev reloads don't redo it; a failed attempt is forgotten so the next call retries.
+ */
+export function ensureIndexes<T extends Document>(col: Collection<T>, indexes: IndexDescription[]): Promise<void> {
+  const cache = (globalForMongo.indexesEnsured ??= new Map());
+  let pending = cache.get(col.collectionName);
+  if (!pending) {
+    pending = col.createIndexes(indexes).then(
+      () => {},
+      (err) => {
+        cache.delete(col.collectionName);
+        console.error(`Failed to create indexes on ${col.collectionName}`, err);
+      }
+    );
+    cache.set(col.collectionName, pending);
+  }
+  return pending;
+}
+
 export async function photos(): Promise<Collection<PhotoRecord>> {
   // Not "photos": that collection already holds another schema with a unique publicId index
-  return (await client()).db(process.env.MONGODB_DB).collection<PhotoRecord>("photo_results");
+  return (await getDb()).collection<PhotoRecord>("photo_results");
 }
 
 /** Salted hash so we can rate-limit by IP without storing it */
