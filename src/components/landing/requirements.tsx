@@ -21,22 +21,22 @@ const rejected = [
 
 export function Requirements() {
   return (
-    <section id="requirements" className="mx-auto max-w-6xl px-4 py-24 sm:px-6 md:py-32">
+    <section id="requirements" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 md:py-32">
       <SectionHeading
         eyebrow="Requirements"
         title="What makes a photo ICAO compliant"
         body="Most rejections come from small details like a shadow or a slight tilt. We check every one of these before you download."
       />
 
-      <div className="mt-16 grid gap-4 md:grid-cols-2">
+      <div className="mt-10 grid gap-3 sm:mt-16 sm:gap-4 md:grid-cols-2">
         <div className="rounded-lg border border-border bg-white">
-          <div className="flex items-center gap-3 border-b border-border px-6 py-4">
+          <div className="flex items-center gap-3 border-b border-border px-5 py-4 sm:px-6">
             <span className="flex size-7 items-center justify-center rounded-md bg-lime-600 text-white">
               <CheckIcon className="size-4" />
             </span>
             <h3 className="font-semibold text-black">Accepted</h3>
           </div>
-          <ul className="space-y-3.5 p-6">
+          <ul className="space-y-3.5 p-5 sm:p-6">
             {accepted.map((r) => (
               <li key={r} className="flex items-start gap-3 text-sm text-gray-700">
                 <CheckIcon className="mt-0.5 size-4 text-lime-600" />
@@ -47,13 +47,13 @@ export function Requirements() {
         </div>
 
         <div className="rounded-lg border border-border bg-gray-50">
-          <div className="flex items-center gap-3 border-b border-border px-6 py-4">
+          <div className="flex items-center gap-3 border-b border-border px-5 py-4 sm:px-6">
             <span className="flex size-7 items-center justify-center rounded-md bg-black text-white">
               <XIcon className="size-4" />
             </span>
             <h3 className="font-semibold text-black">Rejected</h3>
           </div>
-          <ul className="space-y-3.5 p-6">
+          <ul className="space-y-3.5 p-5 sm:p-6">
             {rejected.map((r) => (
               <li key={r} className="flex items-start gap-3 text-sm text-gray-600">
                 <XIcon className="mt-0.5 size-4 text-gray-400" />

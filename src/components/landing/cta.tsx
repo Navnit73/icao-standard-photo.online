@@ -3,8 +3,8 @@ import { ArrowRightIcon } from "@/components/ui/icons";
 
 export function Cta() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
-      <div className="relative overflow-hidden rounded-lg bg-lime-700 px-6 py-16 text-center sm:px-12 md:py-20">
+    <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+      <div className="relative overflow-hidden rounded-lg bg-lime-700 px-5 py-12 text-center sm:px-12 sm:py-16 md:py-20">
         <div
           className="bg-grid fade-edges pointer-events-none absolute inset-0 opacity-20 [--grid-line:var(--white)]"
           aria-hidden
@@ -16,7 +16,7 @@ export function Cta() {
           <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-white/80">
             Skip the photo booth. Create a passport or visa photo from home in under five minutes.
           </p>
-          <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <ButtonLink href="/#start" size="lg" variant="inverse">
               Create your photo
               <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-0.5" />

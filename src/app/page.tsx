@@ -4,6 +4,7 @@ import { Faq } from "@/components/landing/faq";
 import { Features } from "@/components/landing/features";
 import { Hero } from "@/components/landing/hero";
 import { HowItWorks } from "@/components/landing/how-it-works";
+import { MobileCtaBar } from "@/components/landing/mobile-cta-bar";
 import { Requirements } from "@/components/landing/requirements";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <Requirements />
       <Faq />
       <Cta />
+      <MobileCtaBar />
     </>
   );
 }

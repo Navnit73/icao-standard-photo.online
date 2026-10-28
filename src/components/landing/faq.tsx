@@ -28,7 +28,7 @@ const faqs = [
 export function Faq() {
   return (
     <section id="faq" className="border-t border-border bg-gray-50">
-      <div className="mx-auto grid max-w-6xl gap-12 px-4 py-24 sm:px-6 md:py-32 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
+      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-16 sm:px-6 sm:gap-12 sm:py-24 md:py-32 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
         <div className="lg:sticky lg:top-[calc(var(--header-height)+2rem)] lg:self-start">
           <SectionHeading
             align="left"
@@ -38,7 +38,7 @@ export function Faq() {
           />
           <a
             href={`mailto:${siteConfig.supportEmail}`}
-            className="mt-6 inline-flex text-sm font-semibold text-lime-700 underline-offset-4 hover:underline"
+            className="mt-4 inline-flex py-2 text-sm font-semibold text-lime-700 underline-offset-4 hover:underline"
           >
             Contact support →
           </a>
@@ -46,7 +46,7 @@ export function Faq() {
 
         <div className="divide-y divide-border rounded-lg border border-border bg-white">
           {faqs.map((f) => (
-            <details key={f.q} className="group px-6">
+            <details key={f.q} className="group px-5 sm:px-6">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 font-medium text-black [&::-webkit-details-marker]:hidden">
                 {f.q}
                 <span className="flex size-7 shrink-0 items-center justify-center rounded-md border border-border text-gray-500 transition-all group-open:rotate-45 group-open:border-lime-600 group-open:bg-lime-600 group-open:text-white">
