@@ -3,7 +3,7 @@ import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-w
 import { ButtonLink } from "@/components/ui/button-link";
 import { ArrowRightIcon, CheckIcon } from "@/components/ui/icons";
 
-const highlights = ["Checked before download", "Ready in minutes", "Photos auto\u2011deleted"];
+const highlights = ["Checked before download", "Money\u2011back guarantee", "Photos auto\u2011deleted"];
 
 const stats = [
   { value: "ICAO 9303", label: "Standard we follow" },
@@ -23,16 +23,17 @@ export function Hero() {
               className="group inline-flex items-center gap-2 rounded-lg border border-border bg-white py-1.5 pr-3 pl-1.5 text-xs font-medium text-gray-700 shadow-sm transition-colors hover:border-gray-300"
             >
               <span className="rounded-md bg-lime-600 px-2 py-0.5 font-semibold text-white">ICAO</span>
-              Built on the official photo standard
+              Built on official photo ICAO standards
               <ArrowRightIcon className="size-3.5 text-gray-400 transition-transform group-hover:translate-x-0.5" />
             </a>
 
-            <h1 className="mt-7 text-3xl leading-[1.1] font-semibold tracking-tight text-balance text-black sm:text-4xl md:text-5xl lg:text-6xl">
-              Passport photos, <span className="text-lime-700">done right</span> the first time
+            <h1 className="mt-7 text-3xl leading-[1.1] font-semibold tracking-tight text-balance text-black sm:text-4xl md:text-5xl lg:text-4xl">
+              Get an <span className="text-lime-700">ICAO standard photograph</span> online in minutes
             </h1>
-            <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-pretty sm:mt-6 sm:text-lg sm:leading-8 text-gray-600 lg:mx-0">
-              Upload a photo from your phone. We fix the background, size and framing so it meets official
-              requirements. No studio visit needed.
+            <p className="mx-auto mt-5 max-w-xl text-sm leading-6 text-pretty sm:mt-6 sm:text-base sm:leading-7 text-gray-500 lg:mx-0">
+              Upload a selfie or portrait and our ICAO standards photo converter turns it into an ICAO compliant photo for your
+              passport, visa or ID card. We fix the background, size and framing, then check every detail before
+              you download.
             </p>
 
             <div id="hero-actions" className="mt-8 flex flex-col justify-center gap-3 sm:mt-9 sm:flex-row lg:justify-start">

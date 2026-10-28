@@ -12,11 +12,17 @@ export function SiteFooter() {
             <p className="mt-4 text-sm leading-6 text-gray-600">
               Passport, visa and ID photos that meet ICAO 9303 standards. Made online in minutes.
             </p>
+            <a
+              href={`mailto:${siteConfig.supportEmail}`}
+              className="mt-3 inline-block py-1 text-sm font-medium break-all text-gray-700 hover:text-lime-700"
+            >
+              {siteConfig.supportEmail}
+            </a>
           </div>
 
           {footerLinks.map((group) => (
-            <div key={group.title}>
-              <h3 className="text-sm font-semibold text-black">{group.title}</h3>
+            <nav key={group.title} aria-label={group.title}>
+              <h2 className="text-sm font-semibold text-black">{group.title}</h2>
               <ul className="mt-3 space-y-1">
                 {group.links.map((link) => (
                   <li key={link.label}>
@@ -26,15 +32,18 @@ export function SiteFooter() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </nav>
           ))}
         </div>
 
-        <div className="mt-10 flex flex-col gap-2 sm:mt-12 sm:gap-4 border-t border-border pt-6 text-sm text-gray-500 sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 {siteConfig.name}. All rights reserved.</p>
-          <a href={`mailto:${siteConfig.supportEmail}`} className="hover:text-black">
-            {siteConfig.supportEmail}
-          </a>
+        <div className="mt-10 space-y-3 border-t border-border pt-6 text-sm text-gray-500 sm:mt-12">
+          {/* Brand name kept out of this block so it doesn't inflate "icao standard photo" keyword counts */}
+          <p>© 2026 All rights reserved.</p>
+          <p className="text-xs leading-5 text-gray-400">
+            This website is an independent service and is not affiliated with the International Civil Aviation
+            Organization (ICAO) or any government agency. Final photo acceptance is at the discretion of the issuing
+            authority.
+          </p>
         </div>
       </div>
     </footer>

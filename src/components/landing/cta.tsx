@@ -1,5 +1,6 @@
 import { ButtonLink } from "@/components/ui/button-link";
 import { ArrowRightIcon } from "@/components/ui/icons";
+import { siteConfig } from "@/config/site";
 
 export function Cta() {
   return (
@@ -11,10 +12,11 @@ export function Cta() {
         />
         <div className="relative">
           <h2 className="mx-auto max-w-2xl text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">
-            Get your compliant photo today
+            Get your ICAO compliant passport photo today
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-white/80">
-            Skip the photo booth. Create a passport or visa photo from home in under five minutes.
+            Skip the photo booth. Create an ICAO compliant photo from home in under 5 minutes for $
+            {siteConfig.pricing.price}, backed by our money-back guarantee.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <ButtonLink href="/#start" size="lg" variant="inverse">

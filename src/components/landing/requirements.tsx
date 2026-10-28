@@ -24,8 +24,8 @@ export function Requirements() {
     <section id="requirements" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 md:py-32">
       <SectionHeading
         eyebrow="Requirements"
-        title="What makes a photo ICAO compliant"
-        body="Most rejections come from small details like a shadow or a slight tilt. We check every one of these before you download."
+        title="ICAO photo requirements at a glance"
+        body="The ICAO guidelines for passport photographs cover size, framing, background, lighting and expression. Small details like a shadow or a slight tilt cause most rejections, so we check each one before your ICAO standard photograph is ready."
       />
 
       <div className="mt-10 grid gap-3 sm:mt-16 sm:gap-4 md:grid-cols-2">

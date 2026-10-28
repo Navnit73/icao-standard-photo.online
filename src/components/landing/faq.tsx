@@ -2,26 +2,40 @@ import { siteConfig } from "@/config/site";
 import { PlusIcon } from "@/components/ui/icons";
 import { SectionHeading } from "@/components/ui/section-heading";
 
-const faqs = [
+const { pricing, refund } = siteConfig;
+
+export const faqs = [
   {
-    q: "What is an ICAO standard photo?",
-    a: "ICAO (International Civil Aviation Organization) Document 9303 sets the rules most countries use for passport and travel document photos, covering size, framing, background, lighting and expression.",
+    q: "What is an ICAO standard photograph?",
+    a: "An ICAO standard photograph is a passport-style portrait that follows Doc 9303 from the International Civil Aviation Organization. These photo ICAO standards set the size, framing, background, lighting and expression rules that most countries use for passports and visas.",
   },
   {
-    q: "Can I take the photo with my phone?",
-    a: "Yes. Stand about 1–2 m from a plain wall, face a window for soft light, and ask someone to take the photo at eye level. We handle the crop and background.",
+    q: "What are the ICAO photo requirements?",
+    a: "In most countries, an ICAO standard photograph is a recent colour photo, 35×45 mm, with the head 32–36 mm tall from chin to crown. It needs a plain light background, even lighting, a neutral expression and open eyes. The US uses 2×2 in instead. We follow the ICAO guidelines for passport photographs and each country's own rules.",
   },
   {
-    q: "Which countries are supported?",
-    a: "We support passport, visa and ID photo sizes for most countries that follow ICAO guidelines, including the US, UK, Schengen area, India, Canada and Australia.",
+    q: "Is an ICAO standard photo the same as a passport photo?",
+    a: "Almost. Most passport offices start from the ICAO standard photo format, then add local rules such as size or background colour. Choose your document and we apply both.",
   },
   {
-    q: "What if my photo does not pass the check?",
-    a: "We tell you exactly what to fix, such as tilting your head or removing glasses, so you can retake it straight away.",
+    q: "Can I get an ICAO standards photo online free?",
+    a: `Many sites offer an ICAO standards photo online free, but many of them only crop the image and skip the compliance check, which leads to rejections. Our ICAO standards photo converter costs $${pricing.price} once, checks your photo against photo ICAO standards and comes with a money-back guarantee.`,
   },
   {
-    q: "How do I print my photos?",
-    a: "Download the 4×6 in print sheet and print it at any pharmacy or photo lab. Then cut out the photos along the guide lines.",
+    q: "What if a passport office rejects my photo?",
+    a: `If a government agency rejects your ICAO compliant passport photo, we refund 100% of what you paid. Contact us within ${refund.claimDays} days of purchase with the rejection notice. Our check also flags issues like shadows or a tilted head before you download, so you get an ICAO compliant photo the first time.`,
+  },
+  {
+    q: "Can I take an ICAO photo with my phone?",
+    a: "Yes. Any modern phone camera produces a sharp enough image for an official passport photo. Stand 1–2 m from a plain wall, face a window for soft light and keep the camera at eye level.",
+  },
+  {
+    q: "Which countries do you support?",
+    a: "We create an ICAO compliant photo for passports, visas and ID cards in the US, UK, Schengen area, India, Canada, Australia and most other countries that follow ICAO rules.",
+  },
+  {
+    q: "How do I print my ICAO passport photo?",
+    a: "Download the 4×6 in print sheet and print it at any pharmacy or photo lab. Then cut out each photo along the guide lines.",
   },
 ];
 
@@ -33,7 +47,7 @@ export function Faq() {
           <SectionHeading
             align="left"
             eyebrow="FAQ"
-            title="Common questions"
+            title="ICAO photo questions, answered"
             body="Can't find what you're looking for? Our team usually replies within a day."
           />
           <a

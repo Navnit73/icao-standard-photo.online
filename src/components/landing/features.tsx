@@ -1,26 +1,27 @@
 import { CheckIcon, CropIcon, ImageIcon, LockIcon, PrinterIcon, ShieldIcon } from "@/components/ui/icons";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { siteConfig } from "@/config/site";
 
 const features = [
   {
     icon: ImageIcon,
     title: "Clean white background",
-    body: "Busy or coloured backgrounds are replaced with an even, shadow-free white or off-white.",
+    body: "We replace busy or coloured backgrounds with an even, shadow-free white or light grey, as every ICAO standard photo requires.",
   },
   {
     icon: CropIcon,
     title: "Exact sizing",
-    body: "35×45 mm, 2×2 in and other official sizes, cropped to the millimetre for each country.",
+    body: "We crop each ICAO standard photo to 35×45 mm, 2×2 in or your country's official size, measuring head height to the millimetre.",
   },
   {
     icon: PrinterIcon,
     title: "Print-ready sheets",
-    body: "A 4×6 in sheet with multiple copies, so printing at any photo lab costs only a few cents.",
+    body: "Get a 4×6 in sheet with several copies of your ICAO compliant photo, so printing costs only a few cents.",
   },
   {
     icon: LockIcon,
     title: "Private by default",
-    body: "Photos are processed securely and deleted automatically after your download.",
+    body: `We process your ICAO photo securely and delete it automatically within ${siteConfig.privacy.deleteAfterHours} hours.`,
   },
 ];
 
@@ -32,8 +33,8 @@ export function Features() {
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 md:py-32">
         <SectionHeading
           eyebrow="Features"
-          title="Everything an official photo needs"
-          body="Built around the same rules passport offices use to accept or reject applications."
+          title="Why our ICAO standard photograph passes the first time"
+          body="We built every check on the ICAO guidelines for passport photographs, the same rules passport offices use to accept or reject applications."
         />
 
         <div className="mt-10 grid gap-3 sm:mt-16 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -43,9 +44,10 @@ export function Features() {
               <span className="flex size-10 items-center justify-center rounded-lg bg-lime-600 text-white">
                 <ShieldIcon className="size-5" />
               </span>
-              <h3 className="mt-6 text-xl font-semibold">Automatic compliance check</h3>
+              <h3 className="mt-6 text-xl font-semibold">Automatic photo ICAO standards check</h3>
               <p className="mt-3 text-sm leading-6 text-gray-400">
-                Every photo is checked against ICAO 9303 before you download, so you can fix any problem before you apply.
+                Before you download, we test your ICAO standard photograph against six key points from Doc 9303. If
+                anything fails, we tell you exactly what to fix.
               </p>
             </div>
             <ul className="mt-6 grid grid-cols-2 gap-2 sm:mt-8">

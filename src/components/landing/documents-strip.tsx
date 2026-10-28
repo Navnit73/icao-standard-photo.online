@@ -11,7 +11,7 @@ export function DocumentsStrip() {
   return (
     <section id="documents" className="bg-gray-50">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-        <p className="text-center text-sm font-medium text-gray-500">The right size and format for</p>
+        <p className="text-center text-sm font-medium text-gray-500">The right ICAO passport photo size for</p>
         <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
           {documents.map((d) => (
             <li

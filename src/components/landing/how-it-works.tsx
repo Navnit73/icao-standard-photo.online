@@ -1,24 +1,25 @@
 import { DownloadIcon, SparkIcon, UploadIcon } from "@/components/ui/icons";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { siteConfig } from "@/config/site";
 
 const steps = [
   {
     icon: UploadIcon,
-    title: "Take or upload a photo",
-    body: "Use any recent photo taken against a plain wall in good light. A phone camera is enough.",
+    title: "Take your ICAO photo at home",
+    body: "Stand 1–2 m from a plain wall, face a window and ask someone to shoot at eye level. Any recent phone photo works.",
     meta: "JPG, PNG or HEIC",
   },
   {
     icon: SparkIcon,
-    title: "We check and fix it",
-    body: "Background, size, head position and crop are adjusted automatically to the ICAO standard.",
+    title: "We apply photo ICAO standards",
+    body: "We remove the background, crop to your country's size and check head height, eye position, lighting and expression.",
     meta: "6 compliance checks",
   },
   {
     icon: DownloadIcon,
-    title: "Download and print",
-    body: "Get a digital file for online applications and a print-ready sheet for any photo lab.",
-    meta: "Digital + 4×6 in sheet",
+    title: "Pay, download and print",
+    body: `Pay $${siteConfig.pricing.price} once and get a digital ICAO standard photograph for online forms, plus a 4×6 in sheet for any photo lab.`,
+    meta: "Digital file + print sheet",
   },
 ];
 
@@ -27,8 +28,8 @@ export function HowItWorks() {
     <section id="how-it-works" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 md:py-32">
       <SectionHeading
         eyebrow="How it works"
-        title="Three steps to an accepted photo"
-        body="No special equipment and no guesswork. Just a phone and a plain wall."
+        title="How to get an ICAO compliant photo in 3 steps"
+        body="All you need is a phone, a plain wall and good light. Our tool handles everything else."
       />
 
       <ol className="relative mt-10 grid gap-8 sm:mt-16 md:grid-cols-3">
