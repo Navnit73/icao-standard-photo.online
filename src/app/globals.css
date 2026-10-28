@@ -75,7 +75,40 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* Faint square grid used behind hero and CTA sections */
+/* Background beams: glow and spark animations on collision */
+@theme {
+  --animate-beam-glow: beam-glow 3.5s ease-out forwards;
+  --animate-beam-spark: beam-spark 1s ease-out forwards;
+
+  /* Fade in over 1.5s, hold, then fade out after the beam resets at 2s */
+  @keyframes beam-glow {
+    0% {
+      opacity: 0;
+    }
+    43% {
+      opacity: 1;
+    }
+    57% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes beam-spark {
+    from {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+    to {
+      transform: translate(var(--dx), var(--dy));
+      opacity: 0;
+    }
+  }
+}
+
+/* Faint square grid used behind the CTA section */
 @utility bg-grid {
   background-image:
     linear-gradient(to right, var(--grid-line, var(--gray-200)) 1px, transparent 1px),
