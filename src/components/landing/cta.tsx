@@ -1,0 +1,36 @@
+import { ButtonLink } from "@/components/ui/button-link";
+import { ArrowRightIcon } from "@/components/ui/icons";
+
+export function Cta() {
+  return (
+    <section className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
+      <div className="relative overflow-hidden rounded-lg bg-lime-700 px-6 py-16 text-center sm:px-12 md:py-20">
+        <div
+          className="bg-grid fade-edges pointer-events-none absolute inset-0 opacity-20 [--grid-line:var(--white)]"
+          aria-hidden
+        />
+        <div className="relative">
+          <h2 className="mx-auto max-w-2xl text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">
+            Get your compliant photo today
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-white/80">
+            Skip the photo booth. Create a passport or visa photo from home in under five minutes.
+          </p>
+          <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+            <ButtonLink href="/#start" size="lg" variant="inverse">
+              Create your photo
+              <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-0.5" />
+            </ButtonLink>
+            <ButtonLink
+              href="/#requirements"
+              size="lg"
+              variant="inverse-outline"
+            >
+              Check requirements
+            </ButtonLink>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
