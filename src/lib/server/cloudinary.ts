@@ -3,7 +3,7 @@ import { createHash } from "node:crypto";
 const FOLDER = "icao-photo-tool/results";
 const INVOICE_FOLDER = "icao-photo-tool/invoices";
 
-/** Signed upload: SHA-1 of the sorted params followed by the API secret */
+/** Signed upload: SHA-1 of the sorted paragms followed by the API secret */
 async function signedUpload(
   resourceType: "image" | "raw",
   file: string | Blob,
