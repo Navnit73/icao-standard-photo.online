@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
 import { CheckIcon, LockIcon, ShieldIcon, XIcon } from "@/components/ui/icons";
-import { Eyebrow } from "@/components/ui/section-heading";
 import { countries } from "@/config/countries";
 import { siteConfig } from "@/config/site";
 import { breadcrumbSchema, graph, organizationSchema, pageMetadata, webPageSchema } from "@/lib/seo";
@@ -36,9 +35,9 @@ export default function PhotoToolPage() {
       />
 
       <section className="border-b border-border bg-gray-50">
-        <div className="mx-auto max-w-6xl px-4 pt-8 pb-10 sm:px-6 sm:pt-12 sm:pb-14">
+        <div className="mx-auto max-w-6xl px-4 py-5 sm:px-6 sm:py-6">
           <nav aria-label="Breadcrumb">
-            <ol className="flex items-center gap-2 text-sm text-gray-500">
+            <ol className="flex items-center gap-1.5 text-xs text-gray-500">
               <li>
                 <Link href="/" className="transition-colors hover:text-black">
                   Home
@@ -50,20 +49,17 @@ export default function PhotoToolPage() {
               </li>
             </ol>
           </nav>
-          <div className="mt-6">
-            <Eyebrow>ICAO photo tool</Eyebrow>
-            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-balance text-black sm:text-4xl">
-              Create your passport photo
-            </h1>
-            <p className="mt-3 max-w-2xl text-sm leading-6 text-gray-600 sm:text-base sm:leading-7">
-              Pick your country, upload a photo and we handle the background, size and ICAO checks. It takes
-              about a minute.
-            </p>
-          </div>
+          <h1 className="mt-2 text-2xl font-semibold tracking-tight text-black sm:text-3xl">
+            Create your passport photo
+          </h1>
+          <p className="mt-1.5 max-w-2xl text-sm leading-6 text-gray-600">
+            Pick your country, upload a photo and we handle the background, size and ICAO checks — in about a
+            minute.
+          </p>
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-6 px-4 py-8 sm:px-6 sm:py-12 lg:grid-cols-[1.5fr_1fr] lg:gap-8">
+      <section className="mx-auto grid max-w-6xl gap-6 px-4 py-6 sm:px-6 sm:py-8 lg:grid-cols-[1.5fr_1fr] lg:gap-8">
         <PhotoTool />
 
         <aside className="space-y-4">
@@ -88,15 +84,7 @@ export default function PhotoToolPage() {
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
-            <div className="flex gap-3 rounded-lg border border-border bg-white p-4">
-              <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-lime-600/10 text-lime-700">
-                <ShieldIcon className="size-4" />
-              </span>
-              <div>
-                <p className="text-sm font-semibold text-black">Money-back guarantee</p>
-                <p className="mt-0.5 text-xs leading-5 text-gray-500">Full refund if an agency rejects your photo.</p>
-              </div>
-            </div>
+           
             <div className="flex gap-3 rounded-lg border border-border bg-white p-4">
               <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-lime-600/10 text-lime-700">
                 <LockIcon className="size-4" />

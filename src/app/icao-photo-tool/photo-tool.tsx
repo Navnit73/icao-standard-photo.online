@@ -266,7 +266,7 @@ function CountryPicker({
               type="button"
               disabled={disabled}
               onClick={() => pick(c)}
-              className={`inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium transition-colors ${
+              className={`inline-flex cursor-pointer items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-60 ${
                 active
                   ? "border-lime-600 bg-lime-600/10 text-lime-700"
                   : "border-border text-gray-600 hover:border-gray-300 hover:text-black"
@@ -372,23 +372,39 @@ function Dropzone({
         setDragging(false);
         accept(e.dataTransfer.files[0]);
       }}
-      className={`flex cursor-pointer flex-col items-center rounded-lg border-2 border-dashed px-6 py-10 text-center transition-colors sm:py-12 ${
-        dragging ? "border-lime-600 bg-lime-600/5" : "border-gray-300 hover:border-lime-600/60 hover:bg-gray-50"
-      }`}
+      className={`group relative flex cursor-pointer flex-col items-center overflow-hidden rounded-lg border-2 border-dashed px-6 py-10 text-center transition-colors has-[input:focus-visible]:ring-2 has-[input:focus-visible]:ring-lime-600/40 sm:py-12 ${
+        dragging
+          ? "border-lime-600 bg-lime-50"
+          : "border-lime-600/40 bg-linear-to-b from-lime-50/80 to-white hover:border-lime-600 hover:from-lime-50"
+      } ${disabled ? "pointer-events-none opacity-60" : ""}`}
     >
       {picker}
-      <span
-        className={`flex size-12 items-center justify-center rounded-lg transition-colors ${
-          dragging ? "bg-lime-600 text-white" : "bg-lime-600/10 text-lime-700"
-        }`}
-      >
-        <UploadIcon className="size-5" />
+      <span className="relative flex size-14 items-center justify-center">
+        <span
+          aria-hidden
+          className={`absolute inset-0 rounded-lg bg-lime-600/25 motion-safe:animate-ping ${dragging ? "" : "motion-safe:[animation-duration:2.5s]"}`}
+        />
+        <span className="relative flex size-14 items-center justify-center rounded-lg bg-lime-600 text-white shadow-sm transition-transform group-hover:-translate-y-0.5">
+          <UploadIcon className="size-6" />
+        </span>
       </span>
-      <span className="mt-4 text-sm font-semibold text-black">
-        <span className="text-lime-700">Click to upload</span> or drag and drop
+      <span className="mt-5 text-base font-semibold text-black sm:text-lg">
+        {dragging ? "Drop it here" : "Drag your photo here"}
       </span>
-      <span className="mt-1 text-xs text-gray-500">JPG, PNG, WebP or HEIC · up to {MAX_MB} MB</span>
-      <span className="mt-1 text-xs text-gray-500 sm:hidden">On your phone you can take a new photo</span>
+      <span className="mt-1 text-sm text-gray-500">or</span>
+      <span className="mt-3 inline-flex items-center gap-2 rounded-lg bg-lime-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors group-hover:bg-lime-700">
+        <ImageIcon className="size-4" />
+        <span className="sm:hidden">Choose or take a photo</span>
+        <span className="hidden sm:inline">Choose a photo</span>
+      </span>
+      <span className="mt-5 flex flex-wrap items-center justify-center gap-1.5 text-xs text-gray-500">
+        {["JPG", "PNG", "WebP", "HEIC"].map((f) => (
+          <span key={f} className="rounded-md border border-border bg-white px-2 py-0.5 font-medium text-gray-600">
+            {f}
+          </span>
+        ))}
+        <span className="ml-1">up to {MAX_MB} MB</span>
+      </span>
     </label>
   );
 }
