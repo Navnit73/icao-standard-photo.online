@@ -37,7 +37,7 @@ export function Hero() {
             </p>
 
             <div id="hero-actions" className="mt-8 flex flex-col justify-center gap-3 sm:mt-9 sm:flex-row lg:justify-start">
-              <ButtonLink href="/#start" size="lg">
+              <ButtonLink href="/icao-photo-tool" size="lg">
                 Create your photo
                 <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-0.5" />
               </ButtonLink>

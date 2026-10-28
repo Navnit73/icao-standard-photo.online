@@ -31,7 +31,7 @@ export function MobileCtaBar() {
           <p className="truncate text-sm font-semibold text-black">ICAO passport photo</p>
           <p className="truncate text-xs text-gray-500">Ready in under 5 minutes</p>
         </div>
-        <ButtonLink href="/#start" className="shrink-0">
+        <ButtonLink href="/icao-photo-tool" className="shrink-0">
           Create photo
           <ArrowRightIcon className="size-4" />
         </ButtonLink>

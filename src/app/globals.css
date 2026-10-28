@@ -127,10 +127,27 @@ html {
   interpolate-size: allow-keywords;
 }
 
-:focus-visible {
-  outline: 2px solid var(--brand);
-  outline-offset: 2px;
-  border-radius: 0.25rem;
+/* In the base layer so utilities like `outline-none` can override it */
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
+  }
+
+  /* Tailwind v4 dropped the pointer cursor on buttons */
+  button,
+  [role="button"],
+  [role="option"],
+  summary,
+  select,
+  label:has(input[type="file"]) {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
 }
 
 /* Smooth open/close for <details> where supported */

@@ -83,6 +83,7 @@ export const footerLinks = [
 /** Every indexable page, used by the sitemap */
 export const sitePages = [
   { path: "/", priority: 1, changeFrequency: "weekly" as const },
+  { path: "/icao-photo-tool", priority: 0.9, changeFrequency: "monthly" as const },
   { path: "/about", priority: 0.6, changeFrequency: "yearly" as const },
   { path: "/contact", priority: 0.6, changeFrequency: "yearly" as const },
   { path: "/data-security", priority: 0.5, changeFrequency: "yearly" as const },

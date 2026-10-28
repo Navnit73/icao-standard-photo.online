@@ -125,7 +125,7 @@ export default function AboutPage() {
             <h2 className="text-xl font-semibold text-black">Ready for a compliant photo?</h2>
             <p className="mt-1 text-sm text-gray-600">Upload a photo and get it checked in minutes.</p>
           </div>
-          <ButtonLink href="/#start" size="lg" className="w-full sm:w-auto">
+          <ButtonLink href="/icao-photo-tool" size="lg" className="w-full sm:w-auto">
             Create your photo
             <ArrowRightIcon className="size-4" />
           </ButtonLink>

@@ -19,7 +19,7 @@ export function Cta() {
             {siteConfig.pricing.price}, backed by our money-back guarantee.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <ButtonLink href="/#start" size="lg" variant="inverse">
+            <ButtonLink href="/icao-photo-tool" size="lg" variant="inverse">
               Create your photo
               <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-0.5" />
             </ButtonLink>

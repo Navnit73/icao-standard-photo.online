@@ -75,7 +75,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden md:block">
-          <ButtonLink href="/#start" size="sm">
+          <ButtonLink href="/icao-photo-tool" size="sm">
             Create photo
             <ArrowRightIcon className="size-3.5 transition-transform group-hover:translate-x-0.5" />
           </ButtonLink>
@@ -113,7 +113,7 @@ export function SiteHeader() {
               </Link>
             ))}
             <ButtonLink
-              href="/#start"
+              href="/icao-photo-tool"
               onClick={() => setOpen(false)}
               className="mt-2"
             >
