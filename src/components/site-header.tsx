@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks } from "@/config/site";
@@ -14,7 +14,6 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState<string | null>(null);
-  const pathname = usePathname();
 
   // Show the border and shadow only after the page has scrolled
   useEffect(() => {
@@ -58,23 +57,10 @@ export function SiteHeader() {
       <div className="mx-auto flex h-(--header-height) max-w-6xl items-center justify-between px-4 sm:px-6">
         <Logo />
 
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Main">
-          {navLinks.map((link) => {
-            const isActive = link.href.includes("#") ? link.href.endsWith(`#${active}`) : link.href === pathname;
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                aria-current={isActive ? "true" : undefined}
-                className={`rounded-md px-3 py-2 text-sm font-medium transition-colors ${
-                  isActive ? "bg-gray-100 text-black" : "text-gray-600 hover:text-black"
-                }`}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
-        </nav>
+        {/* usePathname suspends on routes with unknown dynamic params, so render the nav without active state until it resolves */}
+        <Suspense fallback={<DesktopNav active={active} />}>
+          <CurrentPathDesktopNav active={active} />
+        </Suspense>
 
         <div className="hidden md:block">
           <ButtonLink href="/icao-photo-tool" size="sm">
@@ -125,5 +111,32 @@ export function SiteHeader() {
         </div>
       </nav>
     </header>
+  );
+}
+
+function CurrentPathDesktopNav({ active }: { active: string | null }) {
+  const pathname = usePathname();
+  return <DesktopNav active={active} pathname={pathname} />;
+}
+
+function DesktopNav({ active, pathname }: { active: string | null; pathname?: string }) {
+  return (
+    <nav className="hidden items-center gap-1 md:flex" aria-label="Main">
+      {navLinks.map((link) => {
+        const isActive = link.href.includes("#") ? link.href.endsWith(`#${active}`) : link.href === pathname;
+        return (
+          <Link
+            key={link.href}
+            href={link.href}
+            aria-current={isActive ? "true" : undefined}
+            className={`rounded-md px-3 py-2 text-sm font-medium transition-colors ${
+              isActive ? "bg-gray-100 text-black" : "text-gray-600 hover:text-black"
+            }`}
+          >
+            {link.label}
+          </Link>
+        );
+      })}
+    </nav>
   );
 }
