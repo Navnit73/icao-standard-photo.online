@@ -2,6 +2,11 @@ import Link from "next/link";
 import { ArrowRightIcon } from "@/components/ui/icons";
 
 const pages = {
+  "/icao-compliant-passport-photo": { title: "ICAO compliant passport photo", body: "Size, rules and how to check your photo." },
+  "/icao-guide/photo-is-not-valid-as-per-icao-standard": {
+    title: "Photo not valid as per ICAO?",
+    body: "Why portals reject photos and how to fix them.",
+  },
   "/about": { title: "About us", body: "Who we are and why we built this service." },
   "/contact": { title: "Contact & support", body: "Get help with your photo or order." },
   "/data-security": { title: "Data security", body: "How we protect your photos and payments." },

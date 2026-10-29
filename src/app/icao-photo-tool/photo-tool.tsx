@@ -28,7 +28,7 @@ type Status = { kind: "idle" } | { kind: "processing"; stage: number } | { kind:
 
 export function PhotoTool() {
   const router = useRouter();
-  const [country, setCountry] = useState<Country | undefined>(getCountry("US"));
+  const [country, setCountry] = useState<Country | undefined>(getCountry("IN"));
   const [file, setFile] = useState<File | null>(null);
   const [status, setStatus] = useState<Status>({ kind: "idle" });
 

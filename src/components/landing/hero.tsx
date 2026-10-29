@@ -59,7 +59,7 @@ export function Hero() {
           {/* Crop the image's empty margins so the mockup fills the column */}
           <div className="relative -mx-4 aspect-[1080/740] overflow-hidden sm:mx-auto sm:w-full sm:max-w-2xl">
             <Image
-              src="https://res.cloudinary.com/ddxu2wqfm/image/upload/v1793177051/ICAO_Passport_Photo_Checker_t99e98.png"
+              src="https://res.cloudinary.com/dipzpwbbk/image/upload/v1793245461/ICAO_Passport_Photo_Checker_t99e98_did3z0.webp"
               alt="Passport photo with ICAO guide lines, all six compliance checks passed and a print sheet ready"
               width={1536}
               height={1024}

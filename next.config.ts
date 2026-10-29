@@ -5,7 +5,10 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
   images: {
-    remotePatterns: [new URL("https://res.cloudinary.com/ddxu2wqfm/**")],
+    remotePatterns: [
+      new URL("https://res.cloudinary.com/ddxu2wqfm/**"),
+      new URL("https://res.cloudinary.com/dipzpwbbk/**"),
+    ],
   },
   turbopack: {
     rules: {

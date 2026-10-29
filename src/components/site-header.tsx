@@ -2,17 +2,19 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { navLinks } from "@/config/site";
 import { ButtonLink } from "./ui/button-link";
 import { ArrowRightIcon, MenuIcon, XIcon } from "./ui/icons";
 import { Logo } from "./logo";
 
-const sectionIds = navLinks.map((link) => link.href.split("#")[1]);
+const sectionIds = navLinks.filter((link) => link.href.includes("#")).map((link) => link.href.split("#")[1]);
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState<string | null>(null);
+  const pathname = usePathname();
 
   // Show the border and shadow only after the page has scrolled
   useEffect(() => {
@@ -58,7 +60,7 @@ export function SiteHeader() {
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Main">
           {navLinks.map((link) => {
-            const isActive = link.href.endsWith(`#${active}`);
+            const isActive = link.href.includes("#") ? link.href.endsWith(`#${active}`) : link.href === pathname;
             return (
               <Link
                 key={link.href}

@@ -50,6 +50,7 @@ export const navLinks = [
   { label: "Features", href: "/#features" },
   { label: "Requirements", href: "/#requirements" },
   { label: "FAQ", href: "/#faq" },
+  { label: "Photo rejected?", href: "/icao-guide/photo-is-not-valid-as-per-icao-standard" },
 ];
 
 export const footerLinks = [
@@ -60,6 +61,13 @@ export const footerLinks = [
       { label: "Features", href: "/#features" },
       { label: "Requirements", href: "/#requirements" },
       { label: "FAQ", href: "/#faq" },
+    ],
+  },
+  {
+    title: "Guides",
+    links: [
+      { label: "ICAO compliant passport photo", href: "/icao-compliant-passport-photo" },
+      { label: "Photo not valid as per ICAO", href: "/icao-guide/photo-is-not-valid-as-per-icao-standard" },
     ],
   },
   {
@@ -84,6 +92,8 @@ export const footerLinks = [
 export const sitePages = [
   { path: "/", priority: 1, changeFrequency: "weekly" as const },
   { path: "/icao-photo-tool", priority: 0.9, changeFrequency: "monthly" as const },
+  { path: "/icao-compliant-passport-photo", priority: 0.8, changeFrequency: "monthly" as const },
+  { path: "/icao-guide/photo-is-not-valid-as-per-icao-standard", priority: 0.7, changeFrequency: "monthly" as const },
   { path: "/about", priority: 0.6, changeFrequency: "yearly" as const },
   { path: "/contact", priority: 0.6, changeFrequency: "yearly" as const },
   { path: "/data-security", priority: 0.5, changeFrequency: "yearly" as const },
