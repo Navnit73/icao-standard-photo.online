@@ -5,6 +5,7 @@ import { RelatedLinks } from "@/components/related-links";
 import { ButtonLink } from "@/components/ui/button-link";
 import { AlertIcon, ArrowRightIcon, CheckIcon } from "@/components/ui/icons";
 import { siteConfig } from "@/config/site";
+import { getPlanPricing } from "@/lib/config/pricing";
 import { absoluteUrl, breadcrumbSchema, graph, organizationSchema, pageMetadata, webPageSchema } from "@/lib/seo";
 
 const page = {
@@ -112,7 +113,7 @@ const faqs = [
   },
   {
     q: "How can I make sure my photo passes next time?",
-    a: `Use a tool that checks your photo against ICAO rules before you download it. Our service costs $${pricing.price}, checks head size, background, lighting and pose, and refunds you if a government agency rejects the photo within ${refund.claimDays} days of purchase.`,
+    a: `Use a tool that checks your photo against ICAO rules before you download it. Our service costs ${getPlanPricing("standard", "INR").amountFormatted} in India ($${pricing.price} elsewhere), checks head size, background, lighting and pose, and refunds you if a government agency rejects the photo within ${refund.claimDays} days of purchase.`,
   },
 ];
 

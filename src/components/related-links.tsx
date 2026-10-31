@@ -7,6 +7,23 @@ const pages = {
     title: "Photo not valid as per ICAO?",
     body: "Why portals reject photos and how to fix them.",
   },
+  "/icao-photo-checker": { title: "ICAO photo checker", body: "Check your photo free before you pay." },
+  "/icao-guide/indian-passport-photo-requirements": {
+    title: "Indian passport photo requirements",
+    body: "630 × 810 px, 250 KB and every rule.",
+  },
+  "/icao-guide/passport-seva-photo-upload-error": {
+    title: "Passport Seva upload errors",
+    body: "Match your error message to its fix.",
+  },
+  "/icao-guide/passport-photo-rejected-reasons": {
+    title: "Passport photo rejected?",
+    body: "Common reasons and what to do next.",
+  },
+  "/icao-guide/take-icao-photo-at-home": {
+    title: "Take an ICAO photo at home",
+    body: "Phone setup, settings and a solo method.",
+  },
   "/about": { title: "About us", body: "Who we are and why we built this service." },
   "/contact": { title: "Contact & support", body: "Get help with your photo or order." },
   "/data-security": { title: "Data security", body: "How we protect your photos and payments." },

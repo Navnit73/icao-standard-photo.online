@@ -131,5 +131,17 @@ export function webPageSchema({
   };
 }
 
+export function faqSchema(path: string, faqs: { q: string; a: string }[]) {
+  return {
+    "@type": "FAQPage",
+    "@id": `${absoluteUrl(path)}#faq`,
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+}
+
 /** Wraps nodes in a single @graph so entities can reference each other by @id. */
 export const graph = (...nodes: object[]) => ({ "@context": "https://schema.org", "@graph": nodes });

@@ -66,7 +66,12 @@ export const footerLinks = [
   {
     title: "Guides",
     links: [
+      { label: "ICAO photo checker", href: "/icao-photo-checker" },
       { label: "ICAO compliant passport photo", href: "/icao-compliant-passport-photo" },
+      { label: "Indian passport photo", href: "/icao-guide/indian-passport-photo-requirements" },
+      { label: "Passport Seva upload errors", href: "/icao-guide/passport-seva-photo-upload-error" },
+      { label: "Passport photo rejected", href: "/icao-guide/passport-photo-rejected-reasons" },
+      { label: "Take an ICAO photo at home", href: "/icao-guide/take-icao-photo-at-home" },
       { label: "Photo not valid as per ICAO", href: "/icao-guide/photo-is-not-valid-as-per-icao-standard" },
     ],
   },
@@ -92,7 +97,12 @@ export const footerLinks = [
 export const sitePages = [
   { path: "/", priority: 1, changeFrequency: "weekly" as const },
   { path: "/icao-photo-tool", priority: 0.9, changeFrequency: "monthly" as const },
+  { path: "/icao-photo-checker", priority: 0.9, changeFrequency: "monthly" as const },
   { path: "/icao-compliant-passport-photo", priority: 0.8, changeFrequency: "monthly" as const },
+  { path: "/icao-guide/indian-passport-photo-requirements", priority: 0.8, changeFrequency: "monthly" as const },
+  { path: "/icao-guide/passport-seva-photo-upload-error", priority: 0.7, changeFrequency: "monthly" as const },
+  { path: "/icao-guide/passport-photo-rejected-reasons", priority: 0.7, changeFrequency: "monthly" as const },
+  { path: "/icao-guide/take-icao-photo-at-home", priority: 0.7, changeFrequency: "monthly" as const },
   { path: "/icao-guide/photo-is-not-valid-as-per-icao-standard", priority: 0.7, changeFrequency: "monthly" as const },
   { path: "/about", priority: 0.6, changeFrequency: "yearly" as const },
   { path: "/contact", priority: 0.6, changeFrequency: "yearly" as const },
