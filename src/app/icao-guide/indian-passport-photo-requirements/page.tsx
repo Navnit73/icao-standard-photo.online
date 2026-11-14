@@ -342,7 +342,11 @@ export default function IndianPassportPhotoPage() {
         />
 
         <RelatedLinks
-          paths={["/icao-guide/passport-seva-photo-upload-error", "/icao-guide/take-icao-photo-at-home", "/icao-photo-checker"]}
+          paths={[
+            "/icao-guide/indian-passport-renewal-photo-size",
+            "/icao-guide/convert-photo-to-icao-standard",
+            "/icao-guide/passport-seva-icao-check-errors",
+          ]}
         />
       </div>
     </>

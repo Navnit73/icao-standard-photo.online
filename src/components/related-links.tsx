@@ -24,6 +24,26 @@ const pages = {
     title: "Take an ICAO photo at home",
     body: "Phone setup, settings and a solo method.",
   },
+  "/icao-guide/convert-photo-to-icao-standard": {
+    title: "Convert photo to ICAO standard",
+    body: "630 × 810 px, 35 × 45 mm and spec checker.",
+  },
+  "/icao-guide/icao-standard-photo-examples": {
+    title: "ICAO photo examples",
+    body: "Acceptable vs rejected samples and framing.",
+  },
+  "/icao-guide/infant-and-baby-passport-photo": {
+    title: "Baby & infant passport photo",
+    body: "Acceptable vs rejected rules and minor sizes.",
+  },
+  "/icao-guide/indian-passport-renewal-photo-size": {
+    title: "Indian passport renewal photo size",
+    body: "630 × 810 px online vs 2 × 2 in VFS/BLS prints.",
+  },
+  "/icao-guide/passport-seva-icao-check-errors": {
+    title: "Passport Seva ICAO check errors",
+    body: "Posture check, mobile error and exceptions.",
+  },
   "/about": { title: "About us", body: "Who we are and why we built this service." },
   "/contact": { title: "Contact & support", body: "Get help with your photo or order." },
   "/data-security": { title: "Data security", body: "How we protect your photos and payments." },

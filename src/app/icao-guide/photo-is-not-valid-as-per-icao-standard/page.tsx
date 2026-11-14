@@ -310,7 +310,13 @@ export default function PhotoNotValidPage() {
           </ButtonLink>
         </section>
 
-        <RelatedLinks paths={["/icao-compliant-passport-photo", "/refund-policy", "/contact"]} />
+        <RelatedLinks
+          paths={[
+            "/icao-guide/passport-seva-icao-check-errors",
+            "/icao-guide/icao-standard-photo-examples",
+            "/icao-compliant-passport-photo",
+          ]}
+        />
       </div>
     </>
   );

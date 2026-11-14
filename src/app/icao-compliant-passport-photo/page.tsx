@@ -526,7 +526,13 @@ export default function IcaoCompliantPassportPhotoPage() {
           </ButtonLink>
         </section>
 
-        <RelatedLinks paths={[rejectionGuide, "/refund-policy", "/data-security"]} />
+        <RelatedLinks
+          paths={[
+            "/icao-guide/icao-standard-photo-examples",
+            "/icao-guide/convert-photo-to-icao-standard",
+            rejectionGuide,
+          ]}
+        />
       </div>
     </>
   );

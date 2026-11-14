@@ -383,7 +383,13 @@ export default function PassportSevaUploadErrorPage() {
           label="Fix my photo"
         />
 
-        <RelatedLinks paths={["/icao-guide/indian-passport-photo-requirements", icaoGuide, "/icao-photo-checker"]} />
+        <RelatedLinks
+          paths={[
+            "/icao-guide/passport-seva-icao-check-errors",
+            "/icao-guide/indian-passport-photo-requirements",
+            icaoGuide,
+          ]}
+        />
       </div>
     </>
   );

@@ -305,7 +305,11 @@ export default function TakePhotoAtHomePage() {
         />
 
         <RelatedLinks
-          paths={["/icao-photo-checker", "/icao-compliant-passport-photo", "/icao-guide/passport-photo-rejected-reasons"]}
+          paths={[
+            "/icao-guide/infant-and-baby-passport-photo",
+            "/icao-guide/icao-standard-photo-examples",
+            "/icao-guide/convert-photo-to-icao-standard",
+          ]}
         />
       </div>
     </>
